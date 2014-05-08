@@ -1,7 +1,7 @@
 # common routine to load the data
 source("load_data.R")
 
-png(filename="plot4.png", width=480, height=480)
+png(filename="plot4.png", width=480, height=480, bg="transparent")
 # two rows, two columns, fill by row
 par(mfrow=c(2,2))
 
@@ -14,17 +14,17 @@ ticks = seq(from=1, by=24*60, length=3)
 #common background
 background = "transparent"
 #plot1
-plot(ss$Global_active_power, xlab="", bg=background, 
+plot(ss$Global_active_power, xlab="", 
      ylab="Global Active Power", type='l', xaxt="n")
 axis(side=1, at=ticks, lab=labels)
 
 #plot2
-plot(ss$Voltage, type="l", col="black", bg=background,
+plot(ss$Voltage, type="l", col="black", 
      xlab="datetime", ylab="Voltage", xaxt="n")
 axis(side=1, at=ticks, lab=labels)
 
 #plot3
-plot(ss$Sub_metering_1, type="l", col="black", bg=background,
+plot(ss$Sub_metering_1, type="l", col="black", 
      xaxt="n", xlab="", ylab="Energy sub metering")
 points(ss$Sub_metering_2, type="l", col="red")
 points(ss$Sub_metering_3, type="l", col="blue")

@@ -1,7 +1,7 @@
 # common routine to load the data
 source("load_data.R")
 
-png(filename="plot2.png", width=480, height=480)
+png(filename="plot2.png", width=480, height=480, bg="transparent")
 
 plot(ss$Global_active_power, bg="transparent",
      xlab="", ylab="Global Active Power (kilowatts)", 
